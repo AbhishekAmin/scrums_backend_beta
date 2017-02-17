@@ -26,7 +26,7 @@ def index():
     return jsonify({'response': 'Server is up and running bitch!'})
 
 
-#register
+
 @app.route('/auth/register', methods=['POST'])
 @parser.validate_arguments([
 	{
@@ -55,6 +55,9 @@ def index():
 	}
 ])
 def register(args):
+    """
+        REGISTER
+    """
 	user_object = User()
 	user_object.username = args['username']
 	user_object.email = args['email']
